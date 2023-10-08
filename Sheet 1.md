@@ -173,8 +173,8 @@ void functionA(int n, int A[]) {
 				cin >> b;
 			}
 			b = b - 1;
-			} functionE(n, A, a, b);break;}
-		case 5: {functionF(n, A);break;}
+			} functionE(n, A, a, b);cout << endl << "Done" << endl;break;}
+		case 5: {functionF(n, A);cout << endl << "Done" << endl;break;}
 
 		}
 	} while (true);
@@ -211,22 +211,15 @@ void functionD(int n, int A[]) {
 	cout << endl << "Done" << endl;
 }
 void functionE(int n, int A[],int a,int b) {
-	int x, y;
+	int x;
 	x = A[a];
-	y = A[b];
-	A[a] = y;
+	A[a] = A[b];
 	A[b] = x;
-	cout << endl << "Done" << endl;
 }
 void functionF(int n, int A[]) {
-	for (int i = 0;i < n-1;i++) {
-		if (A[i] > A[i + 1]) {
-			functionE(n, A, i, i + 1);
-		}
-	}
-	for (int i = n-1;i >0;i--) {
-		if (A[i] < A[i - 1]) {
-			functionE(n, A, i, i - 1);
+	for (int i = 0;i < n - 1;i++) {
+		for (int j = 0;j < n - 1;j++) {
+			if (A[j] > A[j + 1]) functionE(n, A, j, j + 1);
 		}
 	}
 }
