@@ -163,10 +163,10 @@ void read(Series& A) {
 	for (int i = 1;i <= A.n;i++) {
 		int Fi = factorial(i);
 		if (i % 2 == 1) {
-			A.S1 += m * (Fi / (pow(pow(A.x, i) + i, 0.5)));
+			A.S1 += m * (Fi / (pow(pow(A.x, i) + (m*iJ), 0.5)));
 			m *= -1;
 		}
-		if (i % 2 == 0) A.S2 += m * (Fi / (pow(pow(A.x, i) + i, 0.5)));
+		if (i % 2 == 0) A.S2 += m * (Fi / (pow(pow(A.x, i) + (m*iJ), 0.5)));
 		Fi = 1;
 		m *= -1;
 	}
