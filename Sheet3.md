@@ -133,6 +133,7 @@ void main() {
 	avg.print();
 }
 ```
+---
 #### Q3)
 Num.h
 ```
