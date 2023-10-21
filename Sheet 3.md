@@ -209,3 +209,81 @@ void main() {
 	cout << A.avgOfFacts() << endl;
 }
 ```
+---
+#### Q4)
+GCD.h
+```
+class Gcd {
+private:
+	float x[20], y[20], n;
+	int g[20];
+public:
+	int gCalc(float a, float b) {
+		int s = a, g = 1;
+		if (a > b)s = b;
+		for (int i = 1;i <= s;i++)
+			if ((int)a % i == 0 && (int)b % i == 0)g = i;
+		return g;
+	}
+	Gcd() {
+		cout << "length ? :";
+		cin >> n;
+		cout << endl;
+	}
+	Gcd(Gcd& A) { n = A.n; }
+	void read() {
+		cout << endl;
+		for (int i = 0;i < n;i++) {
+			cout << "X[" << i + 1 << "] = ";
+			do {
+				cin >> x[i];
+				if (x[i < 1])cout << "try agin with positive integer\n";
+			} while (x[i] < 1);
+			cout << endl;
+		}
+		for(int i=0;i<n;i++){
+			cout << "Y[" << i + 1 << "] = ";
+			do {
+				cin >> y[i];
+				if (y[i < 1])cout << "try agin with positive integer\n";
+			} while (y[i] < 1);
+			g[i] = gCalc(x[i], y[i]);
+		}
+	}
+	void display() {
+		cout << "X || Y || GCD\n";
+		for (int i = 0;i < n;i++) {
+			cout << x[i] << " || " << y[i] << " || " << g[i] << endl;
+		}
+	}
+	int min() {
+		int min = g[0];
+		for (int i = 0;i < n - 1;i++)
+			if (g[i] > g[i + 1])min = g[i + 1];
+		return min;
+	}
+	void compare(Gcd X) {
+		int z;
+		if (min() > X.min())z = 1;
+		else z = 0;
+		cout << endl;
+		if (z == 1) display();
+		else X.display();
+	}
+};
+```
+GCD.cpp
+```
+#include <iostream>
+using namespace std;
+#include "GCD.h"
+void main() {
+	Gcd A, B(A);
+	A.read();
+	cout << endl;
+	A.display();
+	B.read();
+	B.display();
+	A.compare(B);
+}
+```
