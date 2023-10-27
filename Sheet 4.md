@@ -53,7 +53,7 @@ void main() {
 #include <math.h>
 using namespace std;
 class series {
-	int x[20],n;
+	int x[20], n;
 	double s[20];
 public:
 	series(int a) {
@@ -61,7 +61,7 @@ public:
 	}
 	int fact(int x) {
 		if (x <= 1) return 1;
-		return x * fact(n - 1);
+		return x * fact(x - 1);
 	}
 	int combination(int a, int b) {
 		return (fact(a) / (fact(a - b) * fact(b)));
@@ -76,10 +76,12 @@ public:
 		int sum = 0;
 		for (int j = 0;j <= i;j++) {
 			sum += combination(i, j) * pow(x[i], j + 1);
+			return sum;
 		}
 	}
 	void setS() {
-		for (int i = 0;i < n;i++)
+		int i;
+		for (i = 0;i < n;i++)
 			s[i] = sum(i);
 	}
 	void display() {
@@ -87,8 +89,8 @@ public:
 		for (int i = 0;i < n;i++)
 			cout << i << " || " << s[i] << " || " << x[i] << endl;
 	}
-	friend int sumF(series S);
-	friend int compare(series X, series Y);
+	friend int sumF(series);
+	friend int compare(series, series);
 };
 int sumF(series S) {
 	double max, min;
@@ -104,7 +106,7 @@ int compare(series X, series Y) {
 	return sumF(Y);
 }
 void main() {
-	cout<<"Q2\n";
+	cout << "Q2\n";
 	series A(4), B(6);
 	A.setx();
 	A.setS();
@@ -114,5 +116,4 @@ void main() {
 	cout << endl;
 	cout << compare(A, B) << endl;
 }
-
 ```
