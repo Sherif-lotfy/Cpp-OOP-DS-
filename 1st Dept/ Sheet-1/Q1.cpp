@@ -1,6 +1,3 @@
-#### Q1)
-Q1.a
-```
 #include <iostream>
 using namespace std;
 void Test (int a , int b){
