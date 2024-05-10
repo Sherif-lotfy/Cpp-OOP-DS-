@@ -95,7 +95,7 @@ struct List
                 return i;
             }
         }
-        return -1;
+        return L.END(L);
     }
     element Retrieve(pos p, List L)
     {
