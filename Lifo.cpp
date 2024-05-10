@@ -78,7 +78,7 @@ public:
 int main()
 {
     //for test the stack...
-    // stack s;
+    // stack s(4);
     // s.push(5);
     // s.push(3);
     // cout<<s.Top()<<endl;
