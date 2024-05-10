@@ -10,19 +10,27 @@ struct book
 int
 main()
 {
-    book *x = new book;
-    x->name = "lows of power";
-    // cout << x->name;
-    int *p , a;
-    p = &a;
-    a = 10;
+    // book *x = new book;
+    // x->name = "lows of power";
+    // // cout << x->name;
+    // int *p , a;
+    // p = &a;
+    // a = 10;
     // cout<<a; // 10
     // cout<< &a; //0x5ffe7c <-- the address of ( a )...
     // cout<< p;  //0x5ffe7c <-- the address that ( p ) is holding...
     // cout<< &p; //0x5ffe80 <-- the address of ( p ) itself...
     // cout<< *(&p); //0x5ffe7c <-- the value that ( p ) is holding " the address of ( a ) " ...
     // cout<< &(*(&a)); //0x5ffe7c
-    
+    int x=3,z=5;
+
+    int *p = &x;
+
+    int *q;
+    cout<<"*p = "<<*p<<endl<<"*q = "<<*q<<endl<<"&p = "<<&p<<endl<<"&q = "<<&q<<endl<<"p = "<<p<<endl<<"q = "<<q<<endl;
+    cout<<"changing q;";
+    q = &z;
+    cout<<"*p = "<<*p<<endl<<"*q = "<<*q<<endl<<"&p = "<<&p<<endl<<"&q = "<<&q<<endl<<"p = "<<p<<endl<<"q = "<<q<<endl;
     return 0;
 }
 
