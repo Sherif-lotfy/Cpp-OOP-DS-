@@ -139,5 +139,5 @@ int main()
     // cout << endl;
     // L.Delete(L.Locate(9, L), L); // pos is out of range
     // L.PRINTLIST(L);              // 100 20
-    // return 0;
+    return 0;
 }
