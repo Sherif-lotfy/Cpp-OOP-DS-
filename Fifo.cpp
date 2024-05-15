@@ -88,7 +88,7 @@ public:
 };
 int main()
 {
-    //for test...
+    //for test ...
     // Queue q;
     // q.enqueue(10);
     // q.enqueue(20);
