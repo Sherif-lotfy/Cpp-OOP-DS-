@@ -159,32 +159,50 @@ public:
             cout << " " << p->element << " ";
         }
     }
+    pos find(pos p, elementType ele){
+        if(p == NULL){
+            cout<<"Error: undefind\n";
+            return NULL;
+        }
+        if(p->element == ele){
+            return p;
+        }
+        else if(p->element > ele){
+            return find(p->left , ele);
+        }
+        else {
+            return find(p->right , ele);
+        }
+    }
+
 };
 
 int main()
 {
-    BST t;
-    t.insert(t.root, 4);
-    t.insert(t.root, 2);
-    t.insert(t.root, 1);
-    t.insert(t.root, 3);
-    t.insert(t.root, 6);
-    t.insert(t.root, 5);
-    t.insert(t.root, 7);
-    cout << "\n minimum value in BST is: " << t.findMin(t.root)->element;
-    cout<<endl;
-    t.inorder(t.root);
-    cout<<endl;
-    t.postorder(t.root);
-    cout<<endl;
-    t.preorder(t.root);
-    t.remove(t.root, 4);
-    cout<<endl;
-    t.inorder(t.root);
-    cout<<endl;
-    t.postorder(t.root);
-    cout<<endl;
-    t.preorder(t.root);
+    //for test...
+    // BST t;
+    // t.insert(t.root, 4);
+    // t.insert(t.root, 2);
+    // t.insert(t.root, 1);
+    // t.insert(t.root, 3);
+    // t.insert(t.root, 6);
+    // t.insert(t.root, 5);
+    // t.insert(t.root, 7);
+    // cout << "\n minimum value in BST is: " << t.findMin(t.root)->element;
+    // cout<<endl;
+    // t.inorder(t.root);
+    // cout<<endl;
+    // t.postorder(t.root);
+    // cout<<endl;
+    // t.preorder(t.root);
+    // t.remove(t.root, 4);
+    // cout<<endl;
+    // t.inorder(t.root);
+    // cout<<endl;
+    // t.postorder(t.root);
+    // cout<<endl;
+    // t.preorder(t.root);
+    // cout<<endl<<"the 5's left element is: "<<t.find(t.root, 5)->right->element<<endl;
     system("pause");
     return 0;
 }
